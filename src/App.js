@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from './Components/Layouts/NavBar';
 import { Header, Footer } from './Components/Layouts';
 import Main from './Components/Contents/Main';
 import Test from './Components/Contents/Test';
@@ -11,7 +10,6 @@ class App extends Component {
   render() {
     return (
       <div>
-
         <Header />
         <Main />
         <Test />

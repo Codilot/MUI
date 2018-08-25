@@ -12,7 +12,7 @@ const NavBar = () => {
                     <IconButton color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="title" color="inherit">
+                    <Typography variant="headline" color="inherit">
                         This is the NavBar
                     </Typography>
                 </Toolbar>

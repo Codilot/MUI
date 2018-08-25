@@ -1,17 +1,22 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import ItemOne from './ItemOne';
+import ItemTwo from './ItemTwo';
+import ItemThree from './ItemThree';
+
+
 
 const Main = () => {
     return (
         <Grid container>
             <Grid item sm={4}>
-                item 1
+                <ItemOne /> 
             </Grid>
             <Grid item sm={4}>
-                item 2
+                <ItemTwo />
             </Grid>
             <Grid item sm={4}>
-                item 3
+                <ItemThree />
             </Grid>
         </Grid>
     )

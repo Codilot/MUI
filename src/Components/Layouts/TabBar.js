@@ -9,21 +9,23 @@ import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
 
+const style = {
+    Tab: { flexGrow: 1  }
+}
 
- 
 
 const TabBar = () => {
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" >
                 <Tabs value={0} scrollable scrollButtons="off">
-                    <Tab icon={<PhoneIcon />} />
-                    <Tab icon={<FavoriteIcon />} />
-                    <Tab icon={<PersonPinIcon />} />
-                    <Tab icon={<HelpIcon />} />
-                    <Tab icon={<ShoppingBasket />} />
-                    <Tab icon={<ThumbDown />} />
-                    <Tab icon={<ThumbUp />} />
+                    <Tab icon={<PhoneIcon />}  style={style.Tab} />
+                    <Tab icon={<FavoriteIcon />}  style={style.Tab} />
+                    <Tab icon={<PersonPinIcon />}  style={style.Tab}/>
+                    <Tab icon={<HelpIcon />}  style={style.Tab}/>
+                    <Tab icon={<ShoppingBasket />}  style={style.Tab}/>
+                    <Tab icon={<ThumbDown />}  style={style.Tab}/>
+                    <Tab icon={<ThumbUp />}  style={style.Tab} />
                 </Tabs>
             </AppBar>
             
@@ -31,4 +33,6 @@ const TabBar = () => {
     )
 }
 
-export default TabBar;
+
+
+  export default TabBar;

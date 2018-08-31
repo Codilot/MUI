@@ -4,8 +4,9 @@ import TabBar from './TabBar';
 const Footer = () => {
     return (
         <div>
-            <TabBar />
             <h5>Footer</h5>
+            <TabBar />
+            
         </div>
     )
 }

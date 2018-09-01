@@ -6,11 +6,11 @@ import ItemThree from './ItemThree';
 
 
 
-const Main = () => {
+const Main = ({plantsPerFamily}) => {
     return (
         <Grid container>
             <Grid item sm={4}>
-                <ItemOne /> 
+                <ItemOne plantsPerFamily={plantsPerFamily} /> 
             </Grid>
             <Grid item sm={4}>
                 <ItemTwo />

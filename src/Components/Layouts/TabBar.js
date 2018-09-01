@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
-import { plantFamilies} from '../../store';
+import { plantfamilies} from '../../store';
 
 
 const style = {
@@ -12,8 +12,9 @@ const TabBar = () => {
     return (
         <div>
             <AppBar position="static" >
-                <Tabs plantFamilies={plantFamilies} value={0} scrollable scrollButtons="off">
-                    {plantFamilies.map(group =>
+                <Tabs plantfamilies={plantfamilies} value={0} scrollable scrollButtons="off">
+                    <Tab label="All"  style={style.Tab} />
+                    {plantfamilies.map(group =>
                         <Tab label={group}  style={style.Tab} />
                     )}
                 </Tabs>
@@ -25,4 +26,4 @@ const TabBar = () => {
 
 
 
-  export default TabBar;
+export default TabBar;

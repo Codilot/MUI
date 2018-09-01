@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Footer } from './Components/Layouts';
 import Main from './Components/Contents/Main';
-import Test from './Components/Contents/Test';
 import { plants } from './store';
 
 import './App.css';
@@ -12,12 +11,27 @@ class App extends Component {
     plants
   }
 
+  getPlantsByFamily() {
+    return Object.entries(
+      this.state.plants.reduce((acc, obj) => {
+        const key = obj.family;
+        if (!acc[key]) {
+          acc[key] = [];
+        }
+        acc[key].push(obj);
+        return acc;
+      }, {})
+    );
+  }
+
   render() {
+    const plantsPerFamily = this.getPlantsByFamily();
+
+
     return (
       <div>
         <Header />
-        <Main />
-        <Test />
+        <Main plantsPerFamily = {plantsPerFamily}/>
         <Footer />
       </div>
     );

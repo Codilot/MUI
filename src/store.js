@@ -1,4 +1,4 @@
-export const plantFamilies = [
+export const plantfamilies = [
     'Brassicaceae', 'Amaranthaceae', 'Asteraceae', 'Apiaceae', 'Amaryllidaceae', 'Leguminosae'
 ]
 
@@ -54,7 +54,7 @@ export const plants = [
     },
     {
         id: 'card',
-        name: 'card',
+        name: 'Card',
         soil: 'Middle fertile soil',
         position: 'partial shadow',
         family: 'Amaranthaceae'

@@ -13,7 +13,7 @@ const NavBar = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="headline" color="inherit">
-                        This is the NavBar
+                        PLANTALOT
                     </Typography>
                 </Toolbar>
             </AppBar>

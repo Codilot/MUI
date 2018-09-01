@@ -5,7 +5,7 @@ import ShowItem from './ShowItem';
 
 
 
-const Main = ({ plantsPerFamily }) => {
+const Main = ({ plantsPerFamily, catValue }) => {
     return (
         <Grid
             container
@@ -14,7 +14,7 @@ const Main = ({ plantsPerFamily }) => {
             alignItems="stretch"
         >
             <Grid item sm={4}>
-                <CategoryList plantsPerFamily={plantsPerFamily} />
+                <CategoryList plantsPerFamily={plantsPerFamily} catValue={catValue}/>
             </Grid>
             <Grid item sm={8}>
                 <ShowItem />

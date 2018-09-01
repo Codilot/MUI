@@ -9,6 +9,7 @@ class App extends Component {
 
   state = {
     plants,
+    catValue : "", 
     category: 0
   }
 
@@ -26,19 +27,24 @@ class App extends Component {
   }
 
   handleCategorySelected = (event, category) => {
-    this.setState({ category });
-    console.log("category");
+    this.setState(
+      { category }
+    );
+    this.setState(
+      { catValue: event.target.textContent }
+    );
   };
 
- 
-
-
+  
   render() {
     const plantsPerFamily = this.getPlantsByFamily();
       return (
       <div>
         <Header />
-        <Main plantsPerFamily = {plantsPerFamily}/>
+        <Main 
+          plantsPerFamily = {plantsPerFamily}
+          catValue={this.state.catValue}  
+          />
         <Footer 
           onSelect={this.handleCategorySelected}
           category={this.state.category}

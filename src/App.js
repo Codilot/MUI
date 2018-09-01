@@ -8,10 +8,11 @@ import './App.css';
 class App extends Component {
 
   state = {
-    plants
+    plants,
+    category: 0
   }
 
-  getPlantsByFamily() {
+  getPlantsByFamily = () => {
     return Object.entries(
       this.state.plants.reduce((acc, obj) => {
         const key = obj.family;
@@ -24,15 +25,24 @@ class App extends Component {
     );
   }
 
+  handleCategorySelected = (event, category) => {
+    this.setState({ category });
+    console.log("category");
+  };
+
+ 
+
+
   render() {
     const plantsPerFamily = this.getPlantsByFamily();
-
-
-    return (
+      return (
       <div>
         <Header />
         <Main plantsPerFamily = {plantsPerFamily}/>
-        <Footer />
+        <Footer 
+          onSelect={this.handleCategorySelected}
+          category={this.state.category}
+          />
       </div>
     );
   }

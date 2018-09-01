@@ -1,10 +1,13 @@
 import React from 'react';
 import TabBar from './TabBar';
 
-const Footer = () => {
+const Footer = ({category, onSelect}) => {    
     return (
         <div>
-            <TabBar />
+            <TabBar 
+                onSelect={onSelect}
+                category={category}
+             />
         </div>
     )
 }

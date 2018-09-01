@@ -1,22 +1,23 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ItemOne from './ItemOne';
-import ItemTwo from './ItemTwo';
-import ItemThree from './ItemThree';
+import CategoryList from './CategoryList';
+import ShowItem from './ShowItem';
 
 
 
-const Main = ({plantsPerFamily}) => {
+const Main = ({ plantsPerFamily }) => {
     return (
-        <Grid container>
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="stretch"
+        >
             <Grid item sm={4}>
-                <ItemOne plantsPerFamily={plantsPerFamily} /> 
+                <CategoryList plantsPerFamily={plantsPerFamily} />
             </Grid>
-            <Grid item sm={4}>
-                <ItemTwo />
-            </Grid>
-            <Grid item sm={4}>
-                <ItemThree />
+            <Grid item sm={8}>
+                <ShowItem />
             </Grid>
         </Grid>
     )

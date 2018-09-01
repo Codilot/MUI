@@ -4,18 +4,45 @@ import { plantfamilies} from '../../store';
 
 
 const style = {
-    Tab: { flexGrow: 1  }
+    Tab: { flexGrow: 1  },
+    Tabs: { position: 'fixed',
+            bottom: 0,
+            width: '100%'
+            }
 }
 
 
-const TabBar = () => {
+
+
+
+const TabBar = (props) => {
+    
     return (
         <div>
-            <AppBar position="static" >
-                <Tabs plantfamilies={plantfamilies} value={0} scrollable scrollButtons="off">
-                    <Tab label="All"  style={style.Tab} />
-                    {plantfamilies.map(group =>
-                        <Tab label={group}  style={style.Tab} />
+            <AppBar 
+                position="static"
+                color="default"
+                >
+                <Tabs 
+                    plantfamilies={plantfamilies} 
+                    value={props.category}
+                    onChange={props.onSelect}
+                    indicatorColor="primary"
+                    textColor="primary" 
+                    scrollable
+                    scrollButtons="auto"
+                    style={style.Tabs}
+                    >
+                    <Tab 
+                        label="All"  
+                        style={style.Tab}     
+                        />
+                    {plantfamilies.map((family) =>
+                        <Tab 
+                            key={family} 
+                            label={family}  
+                            style={style.Tab} 
+                            />
                     )}
                 </Tabs>
             </AppBar>

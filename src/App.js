@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { Header, Footer } from './Components/Layouts';
 import Main from './Components/Contents/Main';
 import { plants } from './store';
@@ -39,17 +40,18 @@ class App extends Component {
   render() {
     const plantsPerFamily = this.getPlantsByFamily();
       return (
-      <div>
-        <Header />
-        <Main 
-          plantsPerFamily = {plantsPerFamily}
-          catValue={this.state.catValue}  
-          />
-        <Footer 
-          onSelect={this.handleCategorySelected}
-          category={this.state.category}
-          />
-      </div>
+        <React.Fragment>
+          <CssBaseline />
+          <Header />
+          <Main 
+            plantsPerFamily = {plantsPerFamily}
+            catValue={this.state.catValue}  
+            />
+          <Footer 
+            onSelect={this.handleCategorySelected}
+            category={this.state.category}
+            />
+        </React.Fragment>
     );
   }
 }

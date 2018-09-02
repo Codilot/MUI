@@ -11,7 +11,7 @@ const Main = ({ plantsPerFamily, catValue }) => {
             container
             direction="row"
             justify="center"
-            alignItems="stretch"
+            alignItems="flex-start"
         >
             <Grid item sm={4}>
                 <CategoryList plantsPerFamily={plantsPerFamily} catValue={catValue}/>

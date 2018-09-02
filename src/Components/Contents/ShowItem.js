@@ -1,22 +1,30 @@
 import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
-const styles = {
-    Paper: {
-        padding: '20px',
-        margin: '10px auto',
-        height: '90%'
+
+
+const styles = theme => ({
+    root: {
+      padding: theme.spacing.unit * 2,
+      margin: theme.spacing.unit * 2,
+      height: '80vh',
+      '&:hover': {
+        background: '#edf6e9'
+      }
     },
-    TypographySubheading: {
-        marginTop: '20px'
+    typo: {
+        '&:hover': {
+            color: '#088da5'
+           }
     }
+  });
 
-}
-
-const ShowItem = () => {
+const ShowItem = (props) => {
+    const { classes } = props;
     return (
-        <Paper style={styles.Paper} square>
-            <Typography variant="display1" gutterBottom>
+        <Paper className={classes.root} square>
+            <Typography variant="display1" gutterBottom className={classes.typo}>
                 Welcome to my Vegetable Library
             </Typography>
             <Typography variant="subheading">
@@ -26,4 +34,4 @@ const ShowItem = () => {
     )
 }
 
-export default ShowItem;
+export default withStyles(styles)(ShowItem);

@@ -1,11 +1,17 @@
 import React from 'react';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
 import { plantfamilies} from '../../store';
+import { withStyles } from '@material-ui/core/styles';
 
 
-const style = {
-    Tab: { flexGrow: 1  },
-    Tabs: { position: 'fixed',
+const styles = {
+    tab: { 
+            flexGrow: 1,
+            '&:hover': {
+                color: '#311B92'
+               }
+        },
+    tabs: { position: 'fixed',
             bottom: 0,
             width: '100%'
             }
@@ -16,7 +22,7 @@ const style = {
 
 
 const TabBar = (props) => {
-    
+    const { classes } = props;
     return (
         <div>
             <AppBar 
@@ -31,17 +37,17 @@ const TabBar = (props) => {
                     textColor="primary" 
                     scrollable
                     scrollButtons="auto"
-                    style={style.Tabs}
+                    className={classes.tabs}
                     >
                     <Tab 
                         label="All"  
-                        style={style.Tab}     
+                        className={classes.tab}   
                         />
                     {plantfamilies.map((family) =>
                         <Tab 
                             key={family} 
                             label={family}  
-                            style={style.Tab} 
+                            className={classes.tab}    
                             />
                     )}
                 </Tabs>
@@ -53,4 +59,4 @@ const TabBar = (props) => {
 
 
 
-export default TabBar;
+export default withStyles(styles)(TabBar);

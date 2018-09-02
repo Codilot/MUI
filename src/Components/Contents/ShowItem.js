@@ -10,12 +10,12 @@ const styles = theme => ({
       margin: theme.spacing.unit * 2,
       height: '80vh',
       '&:hover': {
-        background: '#edf6e9'
+        background: '#e5e5e5'
       }
     },
     typo: {
         '&:hover': {
-            color: '#088da5'
+            color: '#311B92'
            }
     }
   });

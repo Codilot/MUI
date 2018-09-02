@@ -38,8 +38,8 @@ class App extends Component {
   };
 
   handlePlantSelected = (id) => {
-     this.setState((plant) => ({
-      plant: this.state.plants.find(plant => plant.id === id)
+    this.setState((prevState) => ({
+      plant: prevState.plants.find(plant => plant.id === id)
     }));
   }
 

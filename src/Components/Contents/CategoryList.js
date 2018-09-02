@@ -7,7 +7,7 @@ const styles = {
   margin: '10px auto'
 }
 
-const CategoryList = ({plantsPerFamily, catValue}) => {
+const CategoryList = ({plantsPerFamily, catValue, onSelect}) => {
 
   let plantsToRender = plantsPerFamily.filter(i => i[0] === catValue)
   if (plantsToRender.length === 0) {
@@ -30,8 +30,13 @@ const CategoryList = ({plantsPerFamily, catValue}) => {
 
           <List component="ul"> 
             {plants.map(({name, id}) => 
-              <ListItem key={id} button>
-                <ListItemText primary={name} />
+              <ListItem 
+                key={id} 
+                onClick={()=>{onSelect(id)}}
+                button>
+                <ListItemText 
+                    primary={name} 
+                  />
               </ListItem>
             )}
           </List>

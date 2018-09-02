@@ -11,7 +11,8 @@ class App extends Component {
   state = {
     plants,
     catValue : "", 
-    category: 0
+    category: 0,
+    plant: {}
   }
 
   getPlantsByFamily = () => {
@@ -36,16 +37,24 @@ class App extends Component {
     );
   };
 
+  handlePlantSelected = (id) => {
+     this.setState((plant) => ({
+      plant: this.state.plants.find(plant => plant.id === id)
+    }));
+  }
+
   
   render() {
     const plantsPerFamily = this.getPlantsByFamily();
-      return (
+       return (
         <React.Fragment>
           <CssBaseline />
           <Header />
           <Main 
             plantsPerFamily = {plantsPerFamily}
-            catValue={this.state.catValue}  
+            catValue={this.state.catValue}
+            plant={this.state.plant}
+            onSelect={this.handlePlantSelected}  
             />
           <Footer 
             onSelect={this.handleCategorySelected}

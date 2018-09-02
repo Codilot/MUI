@@ -5,7 +5,12 @@ import ShowItem from './ShowItem';
 
 
 
-const Main = ({ plantsPerFamily, catValue }) => {
+const Main = ({ 
+    plantsPerFamily, 
+    catValue, 
+    plant,
+    onSelect
+    }) => {
     return (
         <Grid
             container
@@ -14,10 +19,14 @@ const Main = ({ plantsPerFamily, catValue }) => {
             alignItems="flex-start"
         >
             <Grid item sm={4}>
-                <CategoryList plantsPerFamily={plantsPerFamily} catValue={catValue}/>
+                <CategoryList 
+                    plantsPerFamily={plantsPerFamily} 
+                    catValue={catValue}
+                    onSelect={onSelect}
+                    />
             </Grid>
             <Grid item sm={8}>
-                <ShowItem />
+                <ShowItem plant={plant} />
             </Grid>
         </Grid>
     )

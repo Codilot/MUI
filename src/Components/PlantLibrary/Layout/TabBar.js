@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
-import { plantfamilies} from '../../store';
+import { plantfamilies} from '../../../store';
 import { withStyles } from '@material-ui/core/styles';
 
 

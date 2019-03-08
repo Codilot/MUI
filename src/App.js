@@ -1,69 +1,38 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Header, Footer } from './Components/Layouts';
-import Main from './Components/Contents/Main';
-import { plants } from './store';
 
-import './App.css';
+import PlantLibrary from './Components/PlantLibrary/PlantLibrary';
+import InfiniteScroll from './Components/InfiniteScroll/InfiniteScroll';
+
+
 
 class App extends Component {
 
-  state = {
-    plants,
-    catValue : "", 
-    category: 0,
-    plant: {}
-  }
-
-  getPlantsByFamily = () => {
-    return Object.entries(
-      this.state.plants.reduce((acc, obj) => {
-        const key = obj.family;
-        if (!acc[key]) {
-          acc[key] = [];
-        }
-        acc[key].push(obj);
-        return acc;
-      }, {})
-    );
-  }
-
-  handleCategorySelected = (event, category) => {
-    this.setState(
-      { category }
-    );
-    this.setState(
-      { catValue: event.target.textContent }
-    );
-  };
-
-  handlePlantSelected = (id) => {
-    this.setState((prevState) => ({
-      plant: prevState.plants.find(plant => plant.id === id)
-    }));
-  }
-
-  
   render() {
-    const plantsPerFamily = this.getPlantsByFamily();
        return (
         <Router>
           <React.Fragment>
             <CssBaseline />
-            <Header />
-            <Main 
-              plantsPerFamily = {plantsPerFamily}
-              catValue={this.state.catValue}
-              plant={this.state.plant}
-              onSelect={this.handlePlantSelected}  
-              />
-            <Footer 
-              onSelect={this.handleCategorySelected}
-              category={this.state.category}
-              />
+            <div>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/plant-library/">Plant Library</Link>
+                  </li>
+                  <li>
+                    <Link to="/infinite-scroll/">Infinite Scroll</Link>
+                  </li>
+                </ul>
+              </nav>
+            
+             <Route path="/" exact component={InfiniteScroll} />
+             <Route path="/plant-library/" component={PlantLibrary} />
+             <Route path="/infinite-scroll/" component={InfiniteScroll} />
+             </div>
           </React.Fragment>
         </Router>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Header, Footer } from './Layout';
+import { Footer } from './Layout';
 import Main from './Content/Main';
 import { plants } from './../../store';
 
@@ -48,7 +48,7 @@ class PlantLibrary extends Component {
     const plantsPerFamily = this.getPlantsByFamily();
        return (
           <React.Fragment>
-            <Header />
+           
             <Main 
               plantsPerFamily = {plantsPerFamily}
               catValue={this.state.catValue}

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Header, Footer } from './Components/Layouts';
 import Main from './Components/Contents/Main';
@@ -47,20 +50,22 @@ class App extends Component {
   render() {
     const plantsPerFamily = this.getPlantsByFamily();
        return (
-        <React.Fragment>
-          <CssBaseline />
-          <Header />
-          <Main 
-            plantsPerFamily = {plantsPerFamily}
-            catValue={this.state.catValue}
-            plant={this.state.plant}
-            onSelect={this.handlePlantSelected}  
-            />
-          <Footer 
-            onSelect={this.handleCategorySelected}
-            category={this.state.category}
-            />
-        </React.Fragment>
+        <Router>
+          <React.Fragment>
+            <CssBaseline />
+            <Header />
+            <Main 
+              plantsPerFamily = {plantsPerFamily}
+              catValue={this.state.catValue}
+              plant={this.state.plant}
+              onSelect={this.handlePlantSelected}  
+              />
+            <Footer 
+              onSelect={this.handleCategorySelected}
+              category={this.state.category}
+              />
+          </React.Fragment>
+        </Router>
     );
   }
 }

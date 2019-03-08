@@ -7,6 +7,8 @@ import { Header } from './Components/AppLayout'
 
 import PlantLibrary from './Components/PlantLibrary/PlantLibrary'
 import InfiniteScroll from './Components/InfiniteScroll/InfiniteScroll'
+import Pagination from './Components/InfiniteScroll/Pagination'
+
 
 const theme = createMuiTheme()
 
@@ -19,10 +21,9 @@ class App extends Component {
          
             <CssBaseline />
             <Header />
-            <Route path="/" exact component={InfiniteScroll} />
+            <Route path="/" exact component={Pagination} />
             <Route path="/plant-library/" component={PlantLibrary} />
-            <Route path="/infinite-scroll/" component={InfiniteScroll} />
-         
+            <Route path="/infinite-scroll/" component={Pagination} />   
           </MuiThemeProvider>
         </Router>
     );

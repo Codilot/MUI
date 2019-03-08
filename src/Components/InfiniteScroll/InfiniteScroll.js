@@ -1,9 +1,13 @@
 import React from 'react';
+//import { lifecycle } from 'recompose'
+
 
 const InfiniteScroll = () => (
   <div>
-    <h1>InfiniteScroll</h1>
+    hello
   </div>
 )
+
+
 
 export default InfiniteScroll
